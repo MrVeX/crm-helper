@@ -1,0 +1,50 @@
+version: '3.7'
+
+services:
+  app:
+    image: php:7.4-fpm-alpine
+    working_dir: /var/www/crm-helper
+    volumes:
+      - ./:/var/www/crm-helper
+      - ./docker/php/fpm/pool.d/fpm-pool.conf:/usr/local/etc/php-fpm.d/www.conf
+      - ./docker/php/php.ini:/usr/local/etc/php/php.ini
+    environment:
+      DB_HOST: mysql
+      DB_DATABASE: crm_helper
+      DB_PASSWORD: crm_helper
+    container_name: crm_helper
+    expose:
+      - 9000
+
+  mysql:
+    image: mysql
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - mysql-files:/var/lib/mysql-files
+      - ./docker/mysql/my.cnf:/etc/mysql/my.cnf
+    environment:
+      MYSQL_ROOT_PASSWORD: crm_helper
+      MYSQL_DATABASE: crm_helper
+    container_name: mysql
+    ports:
+      - 3306:3306
+
+  memcached:
+    image: memcached
+    container_name: memcached
+    expose:
+      - 11211
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    ports:
+      - 443:443
+      - 80:80
+    volumes:
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+      - ./:/var/www/crm-helper
+
+volumes:
+  mysql-data:
+  mysql-files:
