@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Service\Crm;
+namespace App\AmoCrm\Service;
 
 use Illuminate\Support\Facades\Storage;
 use App\Exceptions\Crm\CrmSaveTokenException;

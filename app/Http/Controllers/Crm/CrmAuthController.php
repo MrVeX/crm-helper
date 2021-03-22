@@ -5,11 +5,11 @@ namespace App\Http\Controllers\Crm;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
-use App\Helper\Crm\CrmHelper;
+use App\AmoCrm\Helper\CrmHelper;
 use AmoCRM\Exceptions\AmoCRMoAuthApiException;
 use App\Exceptions\CrmException;
 use Illuminate\Log\Logger;
-use App\Service\Crm\CrmTokenService;
+use App\AmoCrm\Service\CrmTokenService;
 
 class CrmAuthController extends Controller
 {

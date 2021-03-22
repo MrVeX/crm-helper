@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Helper\Crm;
+namespace App\AmoCrm\Helper;
 
-use AmoCRM\Client\AmoCRMApiClient;
+use app\AmoCRM\Client\AmoCRMApiClient;
 use Illuminate\Support\Env;
-use App\Service\Crm\CrmTokenService;
+use App\AmoCrm\Service\CrmTokenService;
 use League\OAuth2\Client\Token\AccessTokenInterface;
 use League\OAuth2\Client\Token\AccessToken;
 
