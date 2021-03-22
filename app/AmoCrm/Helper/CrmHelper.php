@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\AmoCrm\Helper;
 
-use app\AmoCRM\Client\AmoCRMApiClient;
+use App\AmoCRM\Client\AmoCRMApiClient;
 use Illuminate\Support\Env;
 use App\AmoCrm\Service\CrmTokenService;
 use League\OAuth2\Client\Token\AccessTokenInterface;
