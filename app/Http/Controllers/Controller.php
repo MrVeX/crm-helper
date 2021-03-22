@@ -19,7 +19,6 @@ class Controller extends BaseController
     public function checkStatus(): void
     {
         (new Response(['status' => 'OK'], Response::HTTP_OK))->send();
-
     }
 
     public function widgetRequest(Request $request, Logger $logger): void
