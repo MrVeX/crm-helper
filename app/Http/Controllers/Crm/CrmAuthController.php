@@ -39,8 +39,8 @@ class CrmAuthController extends Controller
             if (!$accessToken->hasExpired()) {
                 CrmTokenService::saveToken(
                     [
-                        'accessToken' => $accessToken->getToken(),
-                        'refreshToken' => $accessToken->getRefreshToken(),
+                        'access_token' => $accessToken->getToken(),
+                        'refresh_token' => $accessToken->getRefreshToken(),
                         'expires' => $accessToken->getExpires(),
                         'baseDomain' => $apiClient->getAccountBaseDomain(),
                     ]

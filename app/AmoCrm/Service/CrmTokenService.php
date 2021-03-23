@@ -22,8 +22,8 @@ class CrmTokenService
     {
         try {
             if (!isset(
-                $accessToken['accessToken'],
-                $accessToken['refreshToken'],
+                $accessToken['access_token'],
+                $accessToken['refresh_token'],
                 $accessToken['expires'],
                 $accessToken['baseDomain']
             )) {
@@ -42,8 +42,8 @@ class CrmTokenService
 
             $json = Json::encode(
                 [
-                    'access_token' => $accessToken['accessToken'],
-                    'refresh_token' => $accessToken['refreshToken'],
+                    'access_token' => $accessToken['access_token'],
+                    'refresh_token' => $accessToken['refresh_token'],
                     'expires' => $accessToken['expires'],
                     'baseDomain' => $accessToken['baseDomain'],
                 ]
@@ -69,8 +69,8 @@ class CrmTokenService
             $accessToken = (new JsonDecoder())->decode($accessToken);
 
             if (!isset(
-                $accessToken['accessToken'],
-                $accessToken['refreshToken'],
+                $accessToken['access_token'],
+                $accessToken['refresh_token'],
                 $accessToken['expires'],
                 $accessToken['baseDomain']
             )) {
@@ -83,8 +83,8 @@ class CrmTokenService
 
             $result = new AccessToken(
                 [
-                    'access_token' => $accessToken['accessToken'],
-                    'refresh_token' => $accessToken['refreshToken'],
+                    'access_token' => $accessToken['access_token'],
+                    'refresh_token' => $accessToken['refresh_token'],
                     'expires' => $accessToken['expires'],
                     'baseDomain' => $accessToken['baseDomain'],
                 ]
